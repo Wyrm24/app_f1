@@ -150,7 +150,7 @@ class _LeagueDetailPageState extends State<LeagueDetailPage> {
                     Image.asset(
                       'assets/images/melbourne.jpg',
                       fit: BoxFit.cover,
-                      errorBuilder: (_, __, ___) =>
+                      errorBuilder: (_, _, _) =>
                           Container(color: const Color(0xFFE10600)),
                     ),
                     Container(

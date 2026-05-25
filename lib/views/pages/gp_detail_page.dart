@@ -134,7 +134,7 @@ class _GpSliverAppBar extends StatelessWidget {
       return Image.network(
         url,
         fit: BoxFit.cover,
-        errorBuilder: (_, __, ___) => Container(color: Colors.black87),
+        errorBuilder: (_, _, _) => Container(color: Colors.black87),
       );
     }
     return Image.asset('assets/images/melbourne.jpg', fit: BoxFit.cover);
@@ -244,8 +244,7 @@ class _CircuitCard extends StatelessWidget {
                         height: 110,
                         color: const Color(0xFFE10600),
                         colorBlendMode: BlendMode.srcIn,
-                        errorBuilder: (_, __, ___) =>
-                            const _CircuitPlaceholder(),
+                        errorBuilder: (_, _, _) => const _CircuitPlaceholder(),
                       )
                     : const _CircuitPlaceholder(),
               ],

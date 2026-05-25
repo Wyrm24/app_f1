@@ -70,12 +70,12 @@ class _GpHeroWidgetState extends State<GpHeroWidget> {
                   ? Image.network(
                       widget.imagePath,
                       fit: BoxFit.cover,
-                      errorBuilder: (_, __, ___) => _fallback(),
+                      errorBuilder: (_, _, _) => _fallback(),
                     )
                   : Image.asset(
                       widget.imagePath,
                       fit: BoxFit.cover,
-                      errorBuilder: (_, __, ___) => _fallback(),
+                      errorBuilder: (_, _, _) => _fallback(),
                     ),
             ),
           ),

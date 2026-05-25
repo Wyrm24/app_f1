@@ -15,10 +15,10 @@ import 'package:fantasy_f1_app/views/pages/league_detail_page.dart';
 // Transition glissement droite -> gauche
 Route _slideRoute(Widget page) {
   return PageRouteBuilder(
-    pageBuilder: (_, __, ___) => page,
+    pageBuilder: (_, _, _) => page,
     transitionDuration: const Duration(milliseconds: 300),
     reverseTransitionDuration: const Duration(milliseconds: 250),
-    transitionsBuilder: (_, animation, __, child) {
+    transitionsBuilder: (_, animation, _, child) {
       return SlideTransition(
         position: Tween<Offset>(
           begin: const Offset(1.0, 0.0),
@@ -357,7 +357,7 @@ class _HomePageState extends State<HomePage> {
         height: 180,
         width: double.infinity,
         fit: BoxFit.cover,
-        errorBuilder: (_, __, ___) =>
+        errorBuilder: (_, _, _) =>
             Image.asset('assets/images/melbourne.jpg', fit: BoxFit.cover),
       );
     }

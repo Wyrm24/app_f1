@@ -5,10 +5,10 @@ import 'package:fantasy_f1_app/views/pages/driver_profile_page.dart';
 
 Route _slideRoute(Widget page) {
   return PageRouteBuilder(
-    pageBuilder: (_, __, ___) => page,
+    pageBuilder: (_, _, _) => page,
     transitionDuration: const Duration(milliseconds: 300),
     reverseTransitionDuration: const Duration(milliseconds: 250),
-    transitionsBuilder: (_, animation, __, child) => SlideTransition(
+    transitionsBuilder: (_, animation, _, child) => SlideTransition(
       position: Tween<Offset>(
         begin: const Offset(1.0, 0.0),
         end: Offset.zero,
