@@ -122,7 +122,7 @@ class _FollowStat extends StatelessWidget {
           label,
           style: TextStyle(
             fontSize: 12,
-            color: onSurface.withOpacity(0.5), // Gris dynamique
+            color: onSurface.withValues(alpha: 0.5), // Gris dynamique
           ),
         ),
       ],
@@ -170,8 +170,8 @@ class _CheckeredPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final paintColor = isDark
-        ? Colors.white.withOpacity(0.2)
-        : Colors.black.withOpacity(0.15);
+        ? Colors.white.withValues(alpha: 0.2)
+        : Colors.black.withValues(alpha: 0.15);
     final paint = Paint()..color = paintColor;
 
     const cellSize = 7.0;
@@ -211,7 +211,7 @@ class ProfileCardContainer extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(isDark ? 0.3 : 0.05),
+              color: Colors.black.withValues(alpha: isDark ? 0.3 : 0.05),
               blurRadius: 10,
               offset: const Offset(0, 2),
             ),
@@ -272,7 +272,10 @@ class ProfileStatsCard extends StatelessWidget {
             const SizedBox(height: 4),
             Text(
               label,
-              style: TextStyle(fontSize: 12, color: onSurface.withOpacity(0.5)),
+              style: TextStyle(
+                fontSize: 12,
+                color: onSurface.withValues(alpha: 0.5),
+              ),
             ),
           ],
         ),
@@ -356,7 +359,7 @@ class ProfileSettingsItem extends StatelessWidget {
       ),
       trailing: Icon(
         Icons.chevron_right,
-        color: Theme.of(context).colorScheme.onSurface.withOpacity(0.3),
+        color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.3),
         size: 20,
       ),
     );

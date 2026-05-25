@@ -11,14 +11,16 @@ import 'package:fantasy_f1_app/viewmodels/home_viewmodel.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  const supabaseUrl = String.fromEnvironment('SUPABASE_URL');
-  const supabaseKey = String.fromEnvironment('SUPABASE_ANON_KEY');
-  debugPrint('URL: $supabaseUrl');
-  debugPrint('KEY: $supabaseKey');
-  const url = String.fromEnvironment('SUPABASE_URL', defaultValue: 'VIDE');
-  const key = String.fromEnvironment('SUPABASE_ANON_KEY', defaultValue: 'VIDE');
-  debugPrint('=== SUPABASE URL: $url');
-  debugPrint('=== SUPABASE KEY: $key');
+  const supabaseUrl = String.fromEnvironment(
+    'SUPABASE_URL',
+    defaultValue: 'VIDE',
+  );
+  const supabaseKey = String.fromEnvironment(
+    'SUPABASE_ANON_KEY',
+    defaultValue: 'VIDE',
+  );
+  debugPrint('==============URL: $supabaseUrl');
+  debugPrint('==============KEY: $supabaseKey');
 
   await Supabase.initialize(url: supabaseUrl, anonKey: supabaseKey);
   // await Supabase.initialize(

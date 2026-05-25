@@ -131,7 +131,7 @@ class DriverProfilePage extends StatelessWidget {
                 else
                   CircleAvatar(
                     radius: 44,
-                    backgroundColor: Colors.white.withOpacity(0.15),
+                    backgroundColor: Colors.white.withValues(alpha: 0.15),
                     child: Text(
                       _name.substring(0, 2).toUpperCase(),
                       style: const TextStyle(
@@ -156,7 +156,7 @@ class DriverProfilePage extends StatelessWidget {
                   Text(
                     _teamName,
                     style: TextStyle(
-                      color: Colors.white.withOpacity(0.75),
+                      color: Colors.white.withValues(alpha: 0.75),
                       fontSize: 13,
                     ),
                   ),
@@ -217,7 +217,7 @@ class DriverProfilePage extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(isDark ? 0.3 : 0.05),
+            color: Colors.black.withValues(alpha: isDark ? 0.3 : 0.05),
             blurRadius: 6,
           ),
         ],
@@ -276,7 +276,7 @@ class DriverProfilePage extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(isDark ? 0.3 : 0.05),
+            color: Colors.black.withValues(alpha: isDark ? 0.3 : 0.05),
             blurRadius: 6,
           ),
         ],
@@ -343,8 +343,8 @@ class _BarChart extends StatelessWidget {
           final isMax = p.points.abs() == maxVal && maxVal > 0;
           final ratio = p.points.abs() / scale;
           final barColor = p.points >= 0
-              ? (isMax ? accent : accent.withOpacity(0.3))
-              : Colors.red.withOpacity(0.6);
+              ? (isMax ? accent : accent.withValues(alpha: 0.3))
+              : Colors.red.withValues(alpha: 0.6);
 
           return Expanded(
             child: Padding(
@@ -419,7 +419,7 @@ class _StatCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(14),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(isDark ? 0.3 : 0.05),
+              color: Colors.black.withValues(alpha: isDark ? 0.3 : 0.05),
               blurRadius: 6,
             ),
           ],

@@ -191,7 +191,7 @@ class _SplashScreenState extends State<SplashScreen>
                     'Build your team. Own the race.',
                     style: TextStyle(
                       // Utilise la couleur de texte secondaire du thème avec opacité
-                      color: colorScheme.onSurface.withOpacity(0.4),
+                      color: colorScheme.onSurface.withValues(alpha: 0.4),
                       fontSize: 13,
                       letterSpacing: 2,
                       fontWeight: FontWeight.w400,

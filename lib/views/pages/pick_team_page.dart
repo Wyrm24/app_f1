@@ -76,7 +76,10 @@ class _PickTeamPageState extends State<PickTeamPage>
   void initState() {
     super.initState();
     _tabController = TabController(length: 2, vsync: this);
-    Future.microtask(() => context.read<PickTeamViewModel>().load());
+    final vm = context.read<PickTeamViewModel>();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      vm.load();
+    });
   }
 
   @override
@@ -344,7 +347,9 @@ class _DriverList extends StatelessWidget {
                           : null,
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(isDark ? 0.3 : 0.04),
+                          color: Colors.black.withValues(
+                            alpha: isDark ? 0.3 : 0.04,
+                          ),
                           blurRadius: 6,
                         ),
                       ],
@@ -559,7 +564,9 @@ class _TeamList extends StatelessWidget {
                           : null,
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(isDark ? 0.3 : 0.04),
+                          color: Colors.black.withValues(
+                            alpha: isDark ? 0.3 : 0.04,
+                          ),
                           blurRadius: 6,
                         ),
                       ],
@@ -573,7 +580,7 @@ class _TeamList extends StatelessWidget {
                         width: 48,
                         height: 48,
                         decoration: BoxDecoration(
-                          color: teamColor.withOpacity(0.15),
+                          color: teamColor.withValues(alpha: 0.15),
                           borderRadius: BorderRadius.circular(10),
                           border: Border.all(color: teamColor, width: 2),
                         ),
@@ -692,7 +699,7 @@ class _SubmitBar extends StatelessWidget {
         color: isDark ? const Color(0xFF1E1E1E) : Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(isDark ? 0.4 : 0.08),
+            color: Colors.black.withValues(alpha: isDark ? 0.4 : 0.08),
             blurRadius: 12,
             offset: const Offset(0, -4),
           ),

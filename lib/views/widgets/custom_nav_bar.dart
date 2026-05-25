@@ -21,8 +21,8 @@ class CustomNavBar extends StatelessWidget {
 
     // Couleur de base du fond flou : sombre ou clair selon le thème
     final navColor = isDark
-        ? Colors.black.withOpacity(0.4)
-        : Colors.white.withOpacity(0.3);
+        ? Colors.black.withValues(alpha: 0.4)
+        : Colors.white.withValues(alpha: 0.3);
 
     return Container(
       margin: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
@@ -34,12 +34,12 @@ class CustomNavBar extends StatelessWidget {
             decoration: BoxDecoration(
               color: navColor, // adapté
               border: Border.all(
-                color: colorScheme.outline.withOpacity(0.4),
+                color: colorScheme.outline.withValues(alpha: 0.4),
                 width: 1,
               ),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
+                  color: Colors.black.withValues(alpha: 0.1),
                   blurRadius: 10,
                   offset: const Offset(0, 5),
                 ),
@@ -57,10 +57,14 @@ class CustomNavBar extends StatelessWidget {
                         currentIndex: currentIndex,
                         backgroundColor: Colors.transparent,
                         activeColor: F1Theme.f1Red,
-                        inactiveColor: colorScheme.onSurface.withOpacity(0.5),
+                        inactiveColor: colorScheme.onSurface.withValues(
+                          alpha: 0.5,
+                        ),
                         border: Border(
                           top: BorderSide(
-                            color: CupertinoColors.systemGrey4.withOpacity(0.3),
+                            color: CupertinoColors.systemGrey4.withValues(
+                              alpha: 0.3,
+                            ),
                             width: 0.5,
                           ),
                         ),

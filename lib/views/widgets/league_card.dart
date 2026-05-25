@@ -63,7 +63,7 @@ class LeagueCard extends StatelessWidget {
           border: Border.all(color: borderColor, width: 0.5),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(isDark ? 0.4 : 0.08),
+              color: Colors.black.withValues(alpha: isDark ? 0.4 : 0.08),
               offset: const Offset(0, 4),
               blurRadius: 4,
             ),

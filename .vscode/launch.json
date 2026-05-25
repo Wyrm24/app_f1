@@ -5,6 +5,16 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Flutter",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "toolArgs": [
+                "--dart-define-from-file=C:\\Users\\hugod\\Documents\\L3\\IFT3150-FantasyF1\\fantasy_f1\\code\\fantasy_f1_app\\secrets.json"
+            ],
+            "cwd": "C:\\Users\\hugod\\Documents\\L3\\IFT3150-FantasyF1\\fantasy_f1\\code\\fantasy_f1_app"
+        },
+        {
             "name": "fantasy_f1_app",
             "request": "launch",
             "type": "dart"
@@ -20,16 +30,6 @@
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
-        },
-        {
-            "name": "Flutter",
-            "type": "dart",
-            "request": "launch",
-            "program": "lib/main.dart",
-            "toolArgs": [
-                "--dart-define-from-file=C:\\Users\\hugod\\Documents\\L3\\IFT3150-FantasyF1\\fantasy_f1\\code\\fantasy_f1_app\\secrets.json"
-            ],
-            "cwd": "C:\\Users\\hugod\\Documents\\L3\\IFT3150-FantasyF1\\fantasy_f1\\code\\fantasy_f1_app"
         }
     ]
 }

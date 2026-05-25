@@ -28,8 +28,8 @@ class _LeagueDetailPageState extends State<LeagueDetailPage> {
   @override
   void initState() {
     super.initState();
-    // Déclenche le chargement sans logique ici
-    Future.microtask(() => context.read<LeagueDetailViewModel>().load());
+    //Future.microtask(() => context.read<LeagueDetailViewModel>().load());
+    context.read<LeagueDetailViewModel>().load();
   }
 
   void _copyCode() {
@@ -157,7 +157,7 @@ class _LeagueDetailPageState extends State<LeagueDetailPage> {
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: [
-                            Colors.black.withOpacity(0.6),
+                            Colors.black.withValues(alpha: 0.6),
                             Colors.transparent,
                           ],
                           begin: Alignment.bottomCenter,
@@ -517,10 +517,12 @@ class _MyCompositionCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: isDark ? const Color(0xFF1E1E1E) : Colors.white,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: const Color(0xFFE10600).withOpacity(0.3)),
+        border: Border.all(
+          color: const Color(0xFFE10600).withValues(alpha: 0.3),
+        ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(isDark ? 0.3 : 0.04),
+            color: Colors.black.withValues(alpha: isDark ? 0.3 : 0.04),
             blurRadius: 8,
           ),
         ],
@@ -764,7 +766,7 @@ class _TeamRow extends StatelessWidget {
             width: 36,
             height: 36,
             decoration: BoxDecoration(
-              color: color.withOpacity(0.15),
+              color: color.withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(8),
               border: Border.all(color: color, width: 1.5),
             ),

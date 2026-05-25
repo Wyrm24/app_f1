@@ -37,23 +37,28 @@ class LiquidNavBar extends StatelessWidget {
             height: 72,
             decoration: BoxDecoration(
               color: isDark
-                  ? Colors.black.withOpacity(0.45)
-                  : Colors.white.withOpacity(0.55),
+                  ? Colors.black.withValues(alpha: 0.45)
+                  : Colors.white.withValues(alpha: 0.55),
               borderRadius: BorderRadius.circular(36),
               border: Border.all(
                 color: isDark
-                    ? const Color.fromARGB(255, 202, 201, 201).withOpacity(0.18)
+                    ? const Color.fromARGB(
+                        255,
+                        202,
+                        201,
+                        201,
+                      ).withValues(alpha: 0.18)
                     : const Color.fromARGB(
                         255,
                         101,
                         101,
                         101,
-                      ).withOpacity(0.86),
+                      ).withValues(alpha: 0.86),
                 width: 0.5,
               ),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.18),
+                  color: Colors.black.withValues(alpha: 0.18),
                   blurRadius: 24,
                   offset: const Offset(0, 8),
                 ),
@@ -71,10 +76,10 @@ class LiquidNavBar extends StatelessWidget {
                     width: 64,
                     height: 52,
                     decoration: BoxDecoration(
-                      color: const Color(0xFFE10600).withOpacity(0.12),
+                      color: const Color(0xFFE10600).withValues(alpha: 0.12),
                       borderRadius: BorderRadius.circular(24),
                       border: Border.all(
-                        color: const Color(0xFFE10600).withOpacity(0.25),
+                        color: const Color(0xFFE10600).withValues(alpha: 0.25),
                         width: 1,
                       ),
                     ),

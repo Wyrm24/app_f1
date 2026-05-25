@@ -39,7 +39,7 @@ class PreferencesPage extends StatelessWidget {
                   subtitle: Text(
                     isDark ? "Enable light theme" : "Enable dark theme",
                   ),
-                  activeColor: const Color(0xFFE10600),
+                  activeThumbColor: const Color(0xFFE10600),
                   value: isDark,
                   onChanged: _toggleTheme, // sauvegarde + notifier
                 );

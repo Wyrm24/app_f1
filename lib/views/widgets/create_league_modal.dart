@@ -479,7 +479,7 @@ class _CreateLeagueModalState extends State<CreateLeagueModal> {
                 duration: const Duration(milliseconds: 180),
                 decoration: BoxDecoration(
                   color: selected
-                      ? const Color(0xFFE10600).withOpacity(0.08)
+                      ? const Color(0xFFE10600).withValues(alpha: 0.08)
                       : colorScheme.surfaceContainerHighest,
                   borderRadius: BorderRadius.circular(14),
                   border: Border.all(
@@ -744,7 +744,7 @@ class _VisibilityCard extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: selected
-              ? const Color(0xFFE10600).withOpacity(0.08)
+              ? const Color(0xFFE10600).withValues(alpha: 0.08)
               : colorScheme.surfaceContainerHighest,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(

@@ -43,7 +43,11 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() => context.read<HomeViewModel>().load());
+    Future.microtask(() {
+      if (mounted) {
+        context.read<HomeViewModel>().load();
+      }
+    });
   }
 
   void _openGpDetail(Map<String, dynamic> race) {
@@ -135,7 +139,7 @@ class _HomePageState extends State<HomePage> {
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: [
-                          Colors.black.withOpacity(0.7),
+                          Colors.black.withValues(alpha: 0.7),
                           Colors.transparent,
                         ],
                         begin: Alignment.bottomCenter,
@@ -258,7 +262,7 @@ class _HomePageState extends State<HomePage> {
             Column(
               children: vm.leagues.take(2).map((team) {
                 final rankStr = team.rank != null && team.totalMembers != null
-                    ? _ordinal(team.rank!) + ' out of ${team.totalMembers}'
+                    ? '${_ordinal(team.rank!)} out of ${team.totalMembers}'
                     : '—';
                 return Padding(
                   padding: const EdgeInsets.symmetric(
@@ -426,12 +430,12 @@ class _PerformerTile extends StatelessWidget {
         color: cardColor,
         borderRadius: BorderRadius.circular(14),
         elevation: isDark ? 0 : 1,
-        shadowColor: Colors.black.withOpacity(0.08),
+        shadowColor: Colors.black.withValues(alpha: 0.08),
         child: InkWell(
           onTap: onTap,
           borderRadius: BorderRadius.circular(14),
-          splashColor: teamColor.withOpacity(0.08),
-          highlightColor: teamColor.withOpacity(0.04),
+          splashColor: teamColor.withValues(alpha: 0.08),
+          highlightColor: teamColor.withValues(alpha: 0.04),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             child: Row(
@@ -474,7 +478,7 @@ class _PerformerTile extends StatelessWidget {
                     width: 40,
                     height: 40,
                     decoration: BoxDecoration(
-                      color: teamColor.withOpacity(0.15),
+                      color: teamColor.withValues(alpha: 0.15),
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(color: teamColor, width: 2),
                     ),
