@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:fantasy_f1_app/data/models/composition_model.dart';
 
@@ -13,7 +14,7 @@ class CompositionService {
   // composition_service.dart — getNextRace()
   Future<Map<String, dynamic>?> getNextRace() async {
     final now = DateTime.now().toUtc().toIso8601String();
-    print('[DEBUG] getNextRace called, now = $now');
+    debugPrint('[DEBUG] getNextRace called, now = $now');
     final data = await _supabase
         .from('races')
         .select()
@@ -21,7 +22,7 @@ class CompositionService {
         .order('race_date', ascending: true)
         .limit(1)
         .maybeSingle();
-    print(
+    debugPrint(
       '[DEBUG] getNextRace result = ${data?['name']} / race_date=${data?['race_date']} / pick_deadline=${data?['pick_deadline']}',
     );
     return data;

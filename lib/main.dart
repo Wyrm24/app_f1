@@ -13,9 +13,19 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   const supabaseUrl = String.fromEnvironment('SUPABASE_URL');
   const supabaseKey = String.fromEnvironment('SUPABASE_ANON_KEY');
+  debugPrint('URL: $supabaseUrl');
+  debugPrint('KEY: $supabaseKey');
+  const url = String.fromEnvironment('SUPABASE_URL', defaultValue: 'VIDE');
+  const key = String.fromEnvironment('SUPABASE_ANON_KEY', defaultValue: 'VIDE');
+  debugPrint('=== SUPABASE URL: $url');
+  debugPrint('=== SUPABASE KEY: $key');
 
   await Supabase.initialize(url: supabaseUrl, anonKey: supabaseKey);
-
+  // await Supabase.initialize(
+  //   url: 'https://yzonecxeqbtdijrbywue.supabase.co',
+  //   anonKey:
+  //       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl6b25lY3hlcWJ0ZGlqcmJ5d3VlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzNDE2MDcsImV4cCI6MjA4ODkxNzYwN30.1Ij9sWreDJZW1H0Cn9v6_TsXYLO5p0QMZBLbgGBHLc8',
+  // );
   runApp(const MyApp());
 }
 

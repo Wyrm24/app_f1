@@ -39,7 +39,7 @@ class LeagueDetailViewModel extends ChangeNotifier {
 
       leaderboard = results[0] as List<FantasyTeam>;
       nextRace = results[1] as Map<String, dynamic>?;
-      print('[DEBUG] nextRace set to = ${nextRace?['name']}');
+      debugPrint('[DEBUG] nextRace set to = ${nextRace?['name']}');
 
       if (nextRace != null) {
         compositionDetails = await _compService.getCompositionWithDetails(

@@ -1,0 +1,35 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "fantasy_f1_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "fantasy_f1_app (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "fantasy_f1_app (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "Flutter",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "toolArgs": [
+                "--dart-define-from-file=C:\\Users\\hugod\\Documents\\L3\\IFT3150-FantasyF1\\fantasy_f1\\code\\fantasy_f1_app\\secrets.json"
+            ],
+            "cwd": "C:\\Users\\hugod\\Documents\\L3\\IFT3150-FantasyF1\\fantasy_f1\\code\\fantasy_f1_app"
+        }
+    ]
+}

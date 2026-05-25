@@ -13,7 +13,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  // TODO: retirer avant la prod
+  // TODO: a retirer
   final _emailController = TextEditingController(text: 'a@a.com');
   final _passwordController = TextEditingController(text: 'aaaaaa');
   final _formKey = GlobalKey<FormState>();
