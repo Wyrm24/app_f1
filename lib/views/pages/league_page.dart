@@ -19,7 +19,11 @@ class _LeaguePageState extends State<LeaguePage> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() => context.read<LeagueViewModel>().load());
+    Future.microtask(() {
+      if (mounted) {
+        context.read<LeagueViewModel>().load();
+      }
+    });
   }
 
   void _showCreateModal() {

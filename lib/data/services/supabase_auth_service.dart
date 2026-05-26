@@ -82,9 +82,9 @@ class SupabaseAuthService {
     await _client
         .from('profiles')
         .update({
-          if (pseudo != null) 'pseudo': pseudo,
-          if (avatarUrl != null) 'avatar_url': avatarUrl,
-          if (flagCode != null) 'flag_code': flagCode,
+          if (pseudo case String v) 'pseudo': v,
+          if (avatarUrl case String v) 'avatar_url': v,
+          if (flagCode case String v) 'flag_code': v,
         })
         .eq('id', user.id);
   }
