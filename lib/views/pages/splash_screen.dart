@@ -1,3 +1,4 @@
+import 'package:fantasy_f1_app/data/services/notification_service.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:fantasy_f1_app/views/pages/welcome_page.dart';
@@ -88,7 +89,9 @@ class _SplashScreenState extends State<SplashScreen>
     if (!mounted) return;
 
     final hasSession = Supabase.instance.client.auth.currentSession != null;
-
+    if (hasSession) {
+      await NotificationService().init();
+    }
     Navigator.of(context).pushReplacement(
       PageRouteBuilder(
         pageBuilder: (_, _, _) =>

@@ -8,9 +8,24 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:fantasy_f1_app/core/theme.dart';
 import 'package:provider/provider.dart';
 import 'package:fantasy_f1_app/viewmodels/home_viewmodel.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'firebase_options.dart'; // généré par flutterfire configure
+
+// Notifs reçues quand app fermée
+@pragma('vm:entry-point')
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+}
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Firebase
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+
+  // Supabase
   const supabaseUrl = String.fromEnvironment(
     'SUPABASE_URL',
     defaultValue: 'VIDE',
@@ -23,11 +38,7 @@ void main() async {
   debugPrint('==============KEY: $supabaseKey');
 
   await Supabase.initialize(url: supabaseUrl, anonKey: supabaseKey);
-  // await Supabase.initialize(
-  //   url: 'https://yzonecxeqbtdijrbywue.supabase.co',
-  //   anonKey:
-  //       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl6b25lY3hlcWJ0ZGlqcmJ5d3VlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzNDE2MDcsImV4cCI6MjA4ODkxNzYwN30.1Ij9sWreDJZW1H0Cn9v6_TsXYLO5p0QMZBLbgGBHLc8',
-  // );
+
   runApp(const MyApp());
 }
 
